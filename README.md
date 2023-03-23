@@ -1,6 +1,6 @@
 # learn-spring-boot
 
-Example Spring Boot rest API
+Example Spring Boot REST API
 
 ## Requirement
 
