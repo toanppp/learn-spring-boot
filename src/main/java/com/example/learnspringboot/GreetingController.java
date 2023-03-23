@@ -30,4 +30,14 @@ public class GreetingController {
 
         return ResponseEntity.ok(new Greeting(id, users.get(id)));
     }
+
+    @DeleteMapping("/greeting/{id}")
+    public ResponseEntity<Greeting> delete(@PathVariable(value = "id") Long id) {
+        if (!users.containsKey(id)) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+
+        var name = users.remove(id);
+        return ResponseEntity.ok(new Greeting(id, name));
+    }
 }
